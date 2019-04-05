@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,20 +63,14 @@
 								</tr>
 							</thead>
 							<tbody>
-
+							<c:forEach var = "buy" items="${buyList}">
 								<tr>
-									<td class="center"><a href="UserBuyHistoryDetail?buy_id=1" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
-									<td class="center">1234年56月78日90時12分</td>
-									<td class="center">サンプル配送料金</td>
-									<td class="center"><123456789円円</td>
+									<td class="center"><a href="UserBuyHistoryDetail?buy_id=${buy.id}" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
+									<td class="center"><fmt:formatDate value="${buy.buyDate}" pattern="yyyy年MM月dd日KK時mm分"/></td>
+									<td class="center">${buy.deliveryMethodName}</td>
+									<td class="center">${buy.totalPrice}</td>
 								</tr>
-								<tr>
-									<td class="center"><a href="UserBuyHistoryDetail?buy_id=2" class="btn-floating btn waves-effect waves-light "> <i class="material-icons">details</i></a></td>
-									<td class="center">1234年56月78日90時12分</td>
-									<td class="center">サンプル配送料金</td>
-									<td class="center"><123456789円円</td>
-								</tr>
-
+							</c:forEach>
 							</tbody>
 						</table>
 					</div>

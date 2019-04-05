@@ -1,4 +1,6 @@
 <%@	page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +30,11 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td class="center">1234年56月78日90時12分</td>
-									<td class="center">サンプル</td>
-									<td class="center">123456789円</td>
-								</tr>
+									<tr>
+										<td class="center"><fmt:formatDate value="${gbh.buyDate}" pattern="yyyy年MM月dd日KK時mm分"/></td>
+										<td class="center">${gbh.deliveryMethodName}</td>
+										<td class="center">${gbh.totalPrice}円</td>
+									</tr>
 							</tbody>
 						</table>
 					</div>
@@ -52,21 +54,15 @@
 								</tr>
 							</thead>
 							<tbody>
+							<c:forEach var = "bude" items="${bude}">
 								<tr>
-									<td class="center">サンプル商品名1</td>
-									<td class="center">111111111円</td>
+									<td class="center">${bude.itemname}</td>
+									<td class="center">${bude.itemprice}円</td>
 								</tr>
+							</c:forEach>
 								<tr>
-									<td class="center">サンプル商品名2</td>
-									<td class="center">222222222円</td>
-								</tr>
-								<tr>
-									<td class="center">サンプル商品名3</td>
-									<td class="center">333333333円</td>
-								</tr>
-								<tr>
-									<td class="center">サンプル</td>
-									<td class="center">123456789円</td>
+									<td class="center">${gbh.deliveryMethodName}</td>
+									<td class="center">${gbh.deliveryMethodPrice}円</td>
 								</tr>
 							</tbody>
 						</table>

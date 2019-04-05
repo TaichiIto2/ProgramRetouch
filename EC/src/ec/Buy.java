@@ -34,7 +34,7 @@ public class Buy extends HttpServlet {
 
 			if (!isLogin) {
 				// Sessionにリターンページ情報を書き込む
-				session.setAttribute("returnStrUrl", "Buy");
+				session.setAttribute("returnStrUrl", "Buy");  
 				// Login画面にリダイレクト
 				response.sendRedirect("Login");
 

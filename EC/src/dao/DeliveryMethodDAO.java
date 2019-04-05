@@ -15,6 +15,7 @@ import beans.DeliveryMethodDataBeans;
  *
  */
 public class DeliveryMethodDAO {
+	
 
 	/**
 	 * DBに登録されている配送方法を取得
